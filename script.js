@@ -1,11 +1,20 @@
 // script.js
 
-// Function to encode HTML into Base64
+// Function to obfuscate HTML into JavaScript
 function obfuscateHTML(html) {
-  // Encode the input HTML into Base64
-  const base64Encoded = btoa(html);
-  // Return the Base64 string wrapped in a script tag for execution
-  return `<script>document.write(atob('${base64Encoded}'));</script>`;
+  // Split the HTML into an array of characters
+  const charArray = html.split('');
+  
+  // Convert each character into its Unicode escape sequence
+  const unicodeArray = charArray.map(char => {
+    return `\\u${char.charCodeAt(0).toString(16).padStart(4, '0')}`;
+  });
+
+  // Join the Unicode array into a single string
+  const unicodeString = unicodeArray.join('');
+
+  // Return the obfuscated JavaScript code
+  return `document.write('${unicodeString}');`;
 }
 
 // DOM Elements
@@ -29,5 +38,5 @@ obfuscateBtn.addEventListener("click", () => {
 copyBtn.addEventListener("click", () => {
   htmlOutput.select();
   document.execCommand("copy");
-  alert("Obfuscated HTML copied to clipboard!");
+  alert("Obfuscated JavaScript copied to clipboard!");
 });
