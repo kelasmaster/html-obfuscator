@@ -1,12 +1,11 @@
 // script.js
 
-// Function to obfuscate HTML
+// Function to encode HTML into Base64
 function obfuscateHTML(html) {
-  return html
-    .replace(/</g, "<")
-    .replace(/>/g, ">")
-    .replace(/\s+/g, " ")
-    .trim();
+  // Encode the input HTML into Base64
+  const base64Encoded = btoa(html);
+  // Return the Base64 string wrapped in a script tag for execution
+  return `<script>document.write(atob('${base64Encoded}'));</script>`;
 }
 
 // DOM Elements
