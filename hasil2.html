@@ -18,7 +18,7 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
   <title>085773009666 Pelatihan Kursus Online Parfum Pewangi Pakaian Laundry</title>
   <link rel="stylesheet" href="https://bandardeterjen.github.io/pelatihan/styles.css">
-  <link rel="stylesheet" href="../socpro.css">
+  <link rel="stylesheet" href="https://bandardeterjen.github.io/pelatihan/socpro.css">
   <link rel="stylesheet" href="https://bandardeterjen.github.io/pelatihan/waform.css" >
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
@@ -28,12 +28,12 @@
 
   <script>
     // Load header and footer
-    fetch('../header.html')
+    fetch('https://bandardeterjen.github.io/pelatihan/header.html')
       .then(response => response.text())
       .then(data => {
         document.getElementById('header').innerHTML = data;
       });
-    fetch('../footer.html')
+    fetch('https://bandardeterjen.github.io/pelatihan/footer.html')
       .then(response => response.text())
       .then(data => {
         document.getElementById('footer').innerHTML = data;
@@ -41,7 +41,7 @@
       });
 
     // Load and render markdown
-    fetch('parfum-laundry.md')
+    fetch('https://bandardeterjen.github.io/pelatihan/kursus/parfum-laundry.md')
       .then(response => response.text())
       .then(text => {
         document.getElementById('post-content').innerHTML = 
@@ -49,7 +49,7 @@
       });
   </script>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <script src="../socpro.js"></script>
-  <script src="../waform.js"></script>
+  <script src="https://bandardeterjen.github.io/pelatihan/socpro.js"></script>
+  <script src="https://bandardeterjen.github.io/pelatihan/waform.js"></script>
 </body>
 </html>
